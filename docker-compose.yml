@@ -3,7 +3,7 @@ services:
   web:
     #pull the image which we uploaded to the registry
     # replace username/repo:tag with your name and image details
-    image: smithajp/tutorial:firstversion
+    image: geekaypee/tutorial:firstversion
     deploy:
       replicas: 5 #run 5 instances of that image
       resources:
@@ -13,7 +13,7 @@ services:
       restart_policy:
         condition: on-failure #immediately restart containers if one fails.
     ports:
-      - "80:80" #map port 80 on the host to web ports 80
+      - "9001:80" #map port 80 on the host to web ports 80
     networks:
       - webnet
 networks: #using default values
